@@ -1,0 +1,7 @@
+{
+  "name": "kafati_art_studio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
