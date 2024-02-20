@@ -10,6 +10,8 @@ import {
   IonCardContent,
   IonCardHeader,
   IonImg,
+  IonButtons,
+  IonMenuButton,
 } from '@ionic/react';
 
 interface Painting {
@@ -68,6 +70,9 @@ const Gallery: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButtons slot="start">
+            <IonMenuButton />
+          </IonButtons>
           <IonTitle>Gallery</IonTitle>
         </IonToolbar>
       </IonHeader>
