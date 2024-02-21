@@ -111,3 +111,15 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 } 
+
+.custom-icon-container {
+  display: flex;
+  align-items: center;
+  margin-right: 1em; /* Adjust the spacing as needed */
+}
+
+.custom-icon-container ion-img {
+  width: 24px; /* Ensuring the icon size matches other icons */
+  height: 24px; /* Ensuring the icon size matches other icons */
+}
+
