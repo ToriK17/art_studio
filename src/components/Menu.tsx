@@ -29,8 +29,8 @@ const appPages: AppPage[] = [
     mdIcon: mailSharp
   },
   {
-    title: 'Outbox',
-    url: '/folder/Outbox',
+    title: 'About',
+    url: '/about',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
   },
