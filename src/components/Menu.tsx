@@ -96,7 +96,7 @@ const Menu: React.FC = () => {
 
         <IonList id="social-list">
         {socialLinks.map((link, index) => (
-          <IonItem lines="none" key={index} href={link.url} target="_blank">
+          <IonItem lines="none" key={index} href={link.url} target="_blank" detail={false}>
             {link.name === 'Saatchiart' ? 
               <div className="custom-icon-container">
                 <IonImg src={link.icon} alt={link.name} />
