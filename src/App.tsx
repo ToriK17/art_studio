@@ -5,6 +5,9 @@ import Menu from './components/Menu';
 import Page from './pages/Page';
 import Gallery from './pages/Gallery/Gallery';
 import About from './pages/About/About';
+import Videos from './pages/Videos/Videos';
+import Contact from './pages/Contact/contact';
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -23,7 +26,6 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import Videos from './pages/Videos/Videos';
 
 setupIonicReact();
 
@@ -38,6 +40,7 @@ const App: React.FC = () => {
             <Route exact path="/gallery" component={Gallery} />
             <Route exact path="/about" component={About} />
             <Route exact path="/videos" component={Videos} />
+            <Route exact path="/contact" component={Contact} />
             <Route path="/folder/:name" exact={true}>
               <Page />
             </Route>

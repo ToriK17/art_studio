@@ -41,22 +41,10 @@ const appPages: AppPage[] = [
     mdIcon: heartSharp
   },
   {
-    title: 'Archived',
-    url: '/folder/Archived',
+    title: 'Contact',
+    url: '/Contact',
     iosIcon: archiveOutline,
     mdIcon: archiveSharp
-  },
-  {
-    title: 'Trash',
-    url: '/folder/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
-  },
-  {
-    title: 'Spam',
-    url: '/folder/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
   }
 ];
 

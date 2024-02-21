@@ -1,0 +1,21 @@
+/* This class is applied to the IonImg component */
+/* Centering the image container */
+.centered-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Take full height of the parent */
+  }
+
+  .contact-img {
+    max-width: 100%; /* Adjust based on your needs */
+    max-height: 100%; /* Adjust if you want to limit the image's height */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+  }  
+  /* Media query for larger screens (e.g., desktops) */
+  @media (min-width: 1024px) {
+    .contact-img {
+      max-width: 250px; /* Make the image smaller on larger screens */
+    }
+  }
+  
