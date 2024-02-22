@@ -82,7 +82,7 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Kafati Art Studio</IonListHeader>
+          <IonListHeader className="kafati-font-header">Kafati Art Studio</IonListHeader>
           <IonNote>Pintor con el pincel extranjero</IonNote>
           {appPages.map((appPage, index) => (
             <IonMenuToggle key={index} autoHide={false}>

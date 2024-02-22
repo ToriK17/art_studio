@@ -123,3 +123,7 @@ ion-item.selected {
   height: 24px; /* Ensuring the icon size matches other icons */
 }
 
+.kafati-font-header {
+  font-family: 'Fredericka the Great', cursive;
+}
+
