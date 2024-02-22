@@ -51,30 +51,6 @@ const appPages: AppPage[] = [
   }
 ];
 
-// Updated with social media information
-const socialLinks = [
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/kafati_art_studio/?hl=en',
-    icon: logoInstagram,
-  },
-  {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/jaime.kafati.5',
-    icon: logoFacebook,
-  },
-  {
-    name: 'YouTube',
-    url: 'https://www.youtube.com/channel/UCzz1Z-gsHb9w4bvj3Xh9REg',
-    icon: logoYoutube,
-  },
-  {
-    name: 'Saatchiart',
-    url: 'https://www.saatchiart.com/kafati',
-    icon: customIcon,
-  },
-];
-
 const Menu: React.FC = () => {
   const location = useLocation();
 
@@ -82,31 +58,37 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader className="kafati-font-header">Kafati Art Studio</IonListHeader>
+          <IonListHeader className="kafati-font-header" style={{ color: '#fff' }}>Kafati Art Studio</IonListHeader>
           <IonNote>Pintor con el pincel extranjero</IonNote>
           {appPages.map((appPage, index) => (
             <IonMenuToggle key={index} autoHide={false}>
               <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
+                <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} style={{ color: '#fff' }} />
                 <IonLabel>{appPage.title}</IonLabel>
               </IonItem>
             </IonMenuToggle>
           ))}
         </IonList>
-
         <IonList id="social-list">
-        {socialLinks.map((link, index) => (
-          <IonItem lines="none" key={index} href={link.url} target="_blank" detail={false}>
-            {link.name === 'Saatchiart' ? 
-              <div className="custom-icon-container">
-                <IonImg src={link.icon} alt={link.name} />
-              </div> : 
-              <IonIcon slot="start" icon={link.icon} />
-            }
-            <IonLabel>{link.name}</IonLabel>
+        <IonItem lines="none" href="https://www.instagram.com/kafati_art_studio/?hl=en" target="_blank" detail={false} >
+            <IonIcon slot="start" icon={logoInstagram} style={{ color: 'white' }} />
+            Instagram
           </IonItem>
-        ))}
-    </IonList>
+          <IonItem lines="none" href="https://www.facebook.com/jaime.kafati.5" target="_blank" detail={false}>
+            <IonIcon slot="start" icon={logoFacebook} style={{ color: '#4267B2' }} />
+            Facebook
+          </IonItem>
+          <IonItem lines="none" href="https://www.youtube.com/channel/UCzz1Z-gsHb9w4bvj3Xh9REg" target="_blank" detail={false}>
+            <IonIcon slot="start" icon={logoYoutube} style={{ color: 'red' }} />
+            YouTube
+          </IonItem>
+          <IonItem lines="none" href="https://www.saatchiart.com/kafati" target="_blank" detail={false}>
+            <div className="custom-icon-container">
+              <IonImg src={customIcon} alt="Saatchi Art" />
+            </div>
+            Saatchi Art
+          </IonItem>
+        </IonList>
       </IonContent>
     </IonMenu>
   );
