@@ -1,0 +1,19 @@
+.custom-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; // Ensure toolbar takes full width
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; // Make sure content fills the toolbar
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 10px; // Adjust gap between links
+}
