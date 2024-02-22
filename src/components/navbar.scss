@@ -2,18 +2,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; // Ensure toolbar takes full width
+  width: 100%;
+}
+
+/* Ensures title and nav links are white */
+ion-title {
+  color: white !important;
+  background-color: black;
+  font-family: 'Fredericka the Great', cursive;
+  padding-top: 1em;
+}
+
+.navbar-links > ion-button {
+  font-family: 'Cinzel', serif !important;
+  --color: white !important;
 }
 
 .navbar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; // Make sure content fills the toolbar
+  width: 100%;
+  padding: 0 40px; /* Adjust padding as needed */
+  background-color: black;
+  
 }
 
-.navbar-links {
+.navbar-links, .social-links {
   display: flex;
   align-items: center;
-  gap: 10px; // Adjust gap between links
+  gap: 20px; /* Adjust gap between links */
+  
+}
+
+.toolbar-title {
+  padding-top: 2em !important;
 }
