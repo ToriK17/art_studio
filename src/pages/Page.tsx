@@ -12,7 +12,7 @@ const Page: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonMenuButton />
+            <IonMenuButton style={{ color: '#fff' }}/>
           </IonButtons>
           <IonTitle>{name}</IonTitle>
         </IonToolbar>

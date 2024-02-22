@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonMenuButton />
+            <IonMenuButton style={{ color: '#fff' }}/>
           </IonButtons>
           <IonTitle>Contact</IonTitle>
         </IonToolbar>

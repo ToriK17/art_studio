@@ -74,6 +74,37 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Background **/
+  --ion-background-color: #000000;
+  --ion-background-color-rgb: 0,0,0;
+
+  /** Text **/
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255,255,255;
+
+  /** Items **/
+  --ion-item-background: #000000;
+  --ion-item-background-activated: #333333;
+
+  /** Toolbar **/
+  --ion-toolbar-background: #000000;
+  --ion-toolbar-text-color: #ffffff;
+
+  /** Tabs **/
+  --ion-tab-bar-background: #000000;
+  --ion-tab-bar-color: var(--ion-color-primary);
+  --ion-tab-bar-color-activated: var(--ion-color-secondary);
+
+  /** Borders **/
+  --ion-border-color: #333333;
+
+  /** Cards **/
+  --ion-card-background: #1e1e1e;
+
+  /** Buttons **/
+  --ion-button-fill-color: #000000;
+  --ion-button-text-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -22,7 +22,7 @@ const About: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonMenuButton />
+            <IonMenuButton style={{ color: '#fff' }}/>
           </IonButtons>
           <IonTitle>About Jaime Kafati</IonTitle>
         </IonToolbar>
