@@ -12,7 +12,7 @@ import {
   IonNote,
 } from '@ionic/react';
 import { useLocation } from 'react-router-dom';
-import { logoInstagram, logoFacebook, logoYoutube, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp } from 'ionicons/icons'; // Importing specific icons for social media
+import { logoInstagram, logoFacebook, logoYoutube, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, images, imagesOutline, imagesSharp, informationCircleOutline, personOutline, personSharp, videocamOutline, videocamSharp, chatbubbleOutline } from 'ionicons/icons'; // Importing specific icons for social media
 import './Menu.css';
 import customIcon from '/src/assets/images/sa-logo.png';
 
@@ -28,25 +28,25 @@ const appPages: AppPage[] = [
   {
     title: 'Gallery',
     url: '/gallery',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    iosIcon: imagesOutline,
+    mdIcon: imagesSharp
   },
   {
     title: 'About',
     url: '/about',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    iosIcon: personOutline,
+    mdIcon: personSharp
   },
   {
     title: 'Videos',
     url: '/videos',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    iosIcon: videocamOutline,
+    mdIcon: videocamSharp
   },
   {
     title: 'Contact',
     url: '/Contact',
-    iosIcon: archiveOutline,
+    iosIcon: chatbubbleOutline,
     mdIcon: archiveSharp
   }
 ];
