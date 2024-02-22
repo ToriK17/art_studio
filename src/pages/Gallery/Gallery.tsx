@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useIsMobile } from '../../hooks/useIsMobile';
+
 import {
   IonPage,
   IonCard,
@@ -12,6 +14,9 @@ import {
   IonImg,
   IonButtons,
   IonMenuButton,
+  IonCol,
+  IonGrid,
+  IonRow,
 } from '@ionic/react';
 
 interface Painting {
@@ -26,6 +31,7 @@ interface Painting {
 
 const Gallery: React.FC = () => {
   const [data, setData] = useState<Painting[]>([]);
+  const isMobile = useIsMobile();
 
   const fetchContentfulData = async () => {
     const query = `
@@ -71,23 +77,29 @@ const Gallery: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonMenuButton style={{ color: '#fff' }}/>
+            <IonMenuButton />
           </IonButtons>
           <IonTitle>Gallery</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        {data.map((painting, index) => (
-          <IonCard key={index}>
-            <IonImg src={painting.imageFile?.url} alt={painting.imageFile?.description} />
-            <IonCardHeader>
-              <IonCardTitle>{painting.title}</IonCardTitle>
-            </IonCardHeader>
-            <IonCardContent>
-              {`${painting.mediaType} ${painting.dimensions}`}
-            </IonCardContent>
-          </IonCard>
-        ))}
+        <IonGrid>
+          <IonRow>
+            {data.map((painting, index) => (
+              <IonCol size={isMobile ? "12" : "4"} key={index}>
+                <IonCard>
+                  <IonImg src={painting.imageFile?.url} alt={painting.imageFile?.description} />
+                  <IonCardHeader>
+                    <IonCardTitle style={{ color: 'white' }}>{painting.title}</IonCardTitle>
+                  </IonCardHeader>
+                  <IonCardContent style={{ color: 'white' }}>
+                    {`${painting.mediaType} ${painting.dimensions}`}
+                  </IonCardContent>
+                </IonCard>
+              </IonCol>
+            ))}
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
