@@ -12,7 +12,7 @@ import {
   IonNote,
 } from '@ionic/react';
 import { useLocation } from 'react-router-dom';
-import { logoInstagram, logoFacebook, logoYoutube, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, images, imagesOutline, imagesSharp, informationCircleOutline, personOutline, personSharp, videocamOutline, videocamSharp, chatbubbleOutline } from 'ionicons/icons'; // Importing specific icons for social media
+import { logoInstagram, logoFacebook, logoYoutube, archiveSharp, imagesOutline, imagesSharp, personOutline, personSharp, videocamOutline, videocamSharp, chatbubbleOutline } from 'ionicons/icons';
 import './Menu.css';
 import customIcon from '/src/assets/images/sa-logo.png';
 
