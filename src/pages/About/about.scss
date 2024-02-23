@@ -13,7 +13,7 @@ h1, p, li, h3 {
   }
   
   .profile-img {
-    padding-top: 1rem;
+    padding-top: 2rem;
     max-width: 80%;
     border-radius: 10px;
   }
@@ -46,7 +46,7 @@ h1, p, li, h3 {
     padding-top: 1rem;
   }
   
-  a {
+  .blue-tags {
     text-decoration: none;
     color: navy !important; 
   }
@@ -65,10 +65,13 @@ h1, p, li, h3 {
         }
       h1, p, li {
         margin: 0 0 0.75rem 0;
-        font-size: x-large;
         font-family: "Roboto", sans-serif;
         color: white;
         font-size: large;
+        }
+    .blue-tags {
+        text-decoration: none;
+        color: violet !important; 
         }
   
     .profile-img {

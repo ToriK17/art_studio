@@ -124,17 +124,17 @@ const About: React.FC = () => {
                   <li>2022 – Selected by an international panel for the South American competition “Arte + Treinta” (Art plus 30, for artist 30 years of age and older) As a result, I was interviewed for publications on multiple occasions by Garces Gallery, Colombia; TP & Go Magazine Digital, Argentina; and Radio Econciencia, Mexico City, Mexico. (Please see links below)</li>
                   <li>2022 – Donated a series of ink drawings as a community engagement piece to the Denver Sheriff Department’s K-9 Unit’s children coloring book.</li>
                   <li>2022 – Completed a landscape painting, “Lookout Mountain” exclusively benefitting “The 2022 Rocky Mountain M.S. Center Gala Auction”</li>
-                  <li>2022 – Three works were selected for <a href="https://www.artistcloseup.com/magazine" target="_blank" rel="noreferrer">Artist Closeup Contemporary Magazine</a></li>
+                  <li>2022 – Three works were selected for <a className='blue-tags' href="https://www.artistcloseup.com/magazine" target="_blank" rel="noreferrer">Artist Closeup Contemporary Magazine</a></li>
                   <li>2023 – Painting “Eve and the Serpent” selected for publication in “Studio Visit Magazine, Volumes 51 & 52”, Boston, MA</li>
                   <li>2023 - On April 5, 2023, awarded the Price “The Universal Artist” at the National Museum of Science and Technology Leonardo da Vinci in Milan, Italy. My work “Bathsheba” oil on canvas, 36” x 48”, (91,44 x121,92 cm) was selected and published in the 2023 encyclopedic editions of “Contemporary Celebrity Masters Vol. II.” And the “5thInternational Prize, Leonardo Davinci edition: The Universal Artist”</li>
                 </ul>
 
                 <h3>Related links:</h3>
                 <ul>
-                  <li>Travel Plan & Go, Magazine Digital, Buenos Aires, Argentina <a href="http://tpandgo.com/artes-plasticas/expo-arte-30-latinoamerica-artista-jaime-kafati" target="_blank" rel="noreferrer">Expo Arte featuring Jaime Kafati</a>  </li>
-                  <li>ES Gallery, Colombia (Instagram: @garcesgallery) <a href="https://garcesgallery.com/" target="_blank" rel="noreferrer">Garces Gallery</a></li>
-                  <li>Miguel Jiménez, radio announcer, Mexico City, Mexico <a href="www.econciencia.com" target="_blank" rel="noreferrer">Econciencia</a>  & <a href="https://www.studiovisitmagazine.com/volumes" target="_blank" rel="noreferrer">Studio Visit Magazine</a> </li>
-                  <li>Featured in Studio Visit Magazine, <a href="https://www.studiovisitmagazine.com/pastvolumes/volume51" target="_blank" rel="noreferrer">Volume 51</a></li>
+                  <li>Travel Plan & Go, Magazine Digital, Buenos Aires, Argentina <a className='blue-tags' href="http://tpandgo.com/artes-plasticas/expo-arte-30-latinoamerica-artista-jaime-kafati" target="_blank" rel="noreferrer">Expo Arte featuring Jaime Kafati</a>  </li>
+                  <li>ES Gallery, Colombia (Instagram: @garcesgallery) <a className='blue-tags' href="https://garcesgallery.com/" target="_blank" rel="noreferrer">Garces Gallery</a></li>
+                  <li>Miguel Jiménez, radio announcer, Mexico City, Mexico <a className='blue-tags' href="www.econciencia.com" target="_blank" rel="noreferrer">Econciencia</a>  & <a className='blue-tags' href="https://www.studiovisitmagazine.com/volumes" target="_blank" rel="noreferrer">Studio Visit Magazine</a> </li>
+                  <li>Featured in Studio Visit Magazine, <a className='blue-tags' href="https://www.studiovisitmagazine.com/pastvolumes/volume51" target="_blank" rel="noreferrer">Volume 51</a></li>
                 </ul>
               </div>
               </IonText>

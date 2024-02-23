@@ -15,7 +15,7 @@ const Videos: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen className="ion-padding">
-        <h2>Please Visit &nbsp;<a href='https://www.youtube.com/channel/UCzz1Z-gsHb9w4bvj3Xh9REg'>Youtube</a> &nbsp;for full playlist and to Subscribe</h2>
+        <h2 className='top-text'>Please Visit &nbsp;<a href='https://www.youtube.com/channel/UCzz1Z-gsHb9w4bvj3Xh9REg'>Youtube</a> &nbsp;for full playlist and to Subscribe</h2>
         <div className="video-container">
           {videoList.slice(0).reverse().map((data) => {
             return (
