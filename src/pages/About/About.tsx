@@ -14,9 +14,9 @@ import { useIsMobile } from '../../hooks/useIsMobile';
 import './about.scss';
 
 const About: React.FC = () => {
-  const profilePic = "/assets/images/Jaime.jpg";
-  const isMobile = useIsMobile();
-  
+const profilePic = "/assets/images/Jaime.jpg";
+const isMobile = useIsMobile();
+
   return (
     <IonPage>
       <IonHeader>

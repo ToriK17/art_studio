@@ -1,21 +1,31 @@
-/* This class is applied to the IonImg component */
-/* Centering the image container */
+.mobile-text {
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.mobile-link {
+  color: violet;
+}
+
+.web-text {
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+
+.web-link {
+  color: navy;
+}
+
 .centered-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100%; /* Take full height of the parent */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
   .contact-img {
-    max-width: 100%; /* Adjust based on your needs */
-    max-height: 100%; /* Adjust if you want to limit the image's height */
-    object-fit: contain; /* Maintain aspect ratio without cropping */
-  }  
-  /* Media query for larger screens (e.g., desktops) */
-  @media (min-width: 1024px) {
-    .contact-img {
-      max-width: 250px; /* Make the image smaller on larger screens */
-    }
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: contain;
   }
   

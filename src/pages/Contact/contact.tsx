@@ -1,9 +1,13 @@
 import React from 'react';
-import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonButton, IonImg, IonHeader, IonToolbar, IonTitle, IonButtons, IonMenuButton } from '@ionic/react';
+import { IonContent, IonPage, IonImg, IonHeader, IonToolbar, IonTitle, IonButtons, IonMenuButton, IonText } from '@ionic/react';
 import './contact.scss';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 const Contact: React.FC = () => {
-  const contactPic = "/assets/images/oxen.png"; // Adjusted path for web accessibility
+  const contactPic = "/assets/images/oxen.png";
+  const isMobile = useIsMobile();
+  const textClass = isMobile ? 'mobile-text' : 'web-text';
+  const linkClass = isMobile ? 'mobile-link' : 'web-link';
 
   return (
     <IonPage>
@@ -16,26 +20,41 @@ const Contact: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen className="ion-padding">
-        <IonGrid>
-          <IonRow>
-            <IonCol size="12" className="ion-text-center centered-container">
-              <IonImg src={contactPic} alt="Jaime Kafati" className="contact-img" />
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol size="12">
-              <div className="about-description">
-                <h1>Get in touch</h1>
-                <p>
+        {isMobile ? (
+          <>
+            <IonImg src={contactPic} alt="Jaime Kafati" />
+            <IonText>
+              <div className="contact-link">
+                <h1 className={`contact-description-h1 ${textClass}`}>Get in touch</h1>
+                <p className={`contact-description ${textClass}`}>
                   If there is a piece that you're interested in purchasing, please{' '}
-                  <a href="mailto:jeskb57@gmail.com" style={{ textDecoration: 'underline', color: 'inherit' }}>
+                  <a className={linkClass} href="mailto:jeskb57@gmail.com" style={{ textDecoration: 'underline' }}>
                     send me an email
                   </a>, and I would be happy to discuss further details.
                 </p>
               </div>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
+            </IonText>
+          </>
+        ) : (
+          <div className="container">
+            <div className="left-half">
+              <IonImg src={contactPic} className="profile-img" alt="Jaime Kafati" />
+            </div>
+            <div className="right-half">
+              <IonText>
+                <div className="contact-link">
+                  <h1 className={`contact-description-h1 ${textClass}`}>Get in touch</h1>
+                  <p className={`contact-description ${textClass}`}>
+                    If there is a piece that you're interested in purchasing, please{' '}
+                    <a className={linkClass} href="mailto:jeskb57@gmail.com" style={{ textDecoration: 'underline' }}>
+                      send me an email
+                    </a>, and I would be happy to discuss further details.
+                  </p>
+                </div>
+              </IonText>
+            </div>
+          </div>
+        )}
       </IonContent>
     </IonPage>
   );
