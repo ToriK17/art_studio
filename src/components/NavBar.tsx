@@ -26,7 +26,7 @@ const NavBar: React.FC = () => {
   return (
     <IonHeader>
       <IonToolbar className="custom-toolbar">
-        <IonTitle>Kafati Art Studio</IonTitle>
+      <a href="/gallery" class="toolbar-title">Kafati Art Studio</a>
         {!isSmallScreen && (
           <div className="navbar-content">
             <div className="navbar-links">
