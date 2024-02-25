@@ -39,7 +39,7 @@ const NavBar: React.FC = () => {
                 <IonIcon icon={logoInstagram} style={{ color: 'white' }} />
               </IonButton>
               <IonButton fill="clear" href="https://www.facebook.com/jaime.kafati.5" target="_blank">
-                <IonIcon icon={logoFacebook} style={{ color: 'blue' }} />
+                <IonIcon icon={logoFacebook} style={{ color: 'royalblue' }} />
               </IonButton>
               <IonButton fill="clear" href="https://www.youtube.com/channel/UCzz1Z-gsHb9w4bvj3Xh9REg" target="_blank">
                 <IonIcon icon={logoYoutube} style={{ color: 'red' }} />
