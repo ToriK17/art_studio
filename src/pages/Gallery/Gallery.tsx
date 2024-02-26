@@ -18,6 +18,7 @@ import {
   IonGrid,
   IonRow,
 } from '@ionic/react';
+import { filter } from 'ionicons/icons';
 
 interface Painting {
   title: string;
@@ -59,10 +60,22 @@ const Gallery: React.FC = () => {
         },
         body: JSON.stringify({ query }),
       });
-      console.log("Raw response:", response);
 
-      const result = await response.json();
-      setData(result.data.paintingPostCollection.items);
+    const result = await response.json();
+    const items = result.data.paintingPostCollection.items;
+
+    // Filter out duplicates
+    const uniqueUrls = new Set();
+    const filteredItems = items.filter((item: { imageFile: { url: any; }; }) => {
+      const url = item.imageFile?.url;
+      if (url && !uniqueUrls.has(url)) {
+        uniqueUrls.add(url);
+        return true;
+      }
+      return false;
+    });
+    console.log(filteredItems.length)
+    setData(filteredItems);
     } catch (error) {
       console.error(error);
     }
