@@ -94,7 +94,7 @@ export default[
 		title: 'Painting a Tropical Scene'
 	},
 	{
-		src: 'https://www.youtube.com/watch?v=bBwAuG3xCUM',
+		src: 'https://www.youtube.com/embed/bBwAuG3xCUM?si=088T_WCzTEjgesvG',
 		title: 'Magazine artista plástico contemporáneo'
 	}
 ]
