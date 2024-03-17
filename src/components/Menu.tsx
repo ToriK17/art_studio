@@ -15,6 +15,7 @@ import { useLocation } from 'react-router-dom';
 import { logoInstagram, logoFacebook, logoYoutube, archiveSharp, imagesOutline, imagesSharp, personOutline, personSharp, videocamOutline, videocamSharp, chatbubbleOutline } from 'ionicons/icons';
 import './Menu.css';
 import customIcon from '/src/assets/images/sa-logo.png';
+import LanguageToggle from './LanguageToggle';
 
 
 interface AppPage {
@@ -58,6 +59,7 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
+          <LanguageToggle/>
           <IonListHeader className="kafati-font-header" style={{ color: '#fff' }}>Kafati Art Studio</IonListHeader>
           <IonNote>Pintor con el pincel extranjero</IonNote>
           {appPages.map((appPage, index) => (

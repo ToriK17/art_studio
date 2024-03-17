@@ -28,6 +28,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import NavBar from './components/NavBar';
+import { LanguageProvider } from './components/LanguageContext';
 
 setupIonicReact();
 
@@ -35,6 +36,7 @@ const App: React.FC = () => {
   const isMobile = useIsMobile();
 
   return (
+    <LanguageProvider>
     <IonApp>
       <IonReactRouter>
         {isMobile ? (
@@ -64,6 +66,7 @@ const App: React.FC = () => {
         )}
       </IonReactRouter>
     </IonApp>
+    </LanguageProvider>
   );
 };
 
