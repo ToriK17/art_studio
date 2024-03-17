@@ -168,14 +168,15 @@ const isMobile = useIsMobile();
             </div>
             <div className="right-half">
             <IonText>
+              <h2>{title}</h2>
               <div className="about-description">
                   <p>{p1}</p>
                   <p>{p2}</p>
                   <p>{p3}</p>
 
-                <h3 style={{ color: '#fff' }}>{title2}</h3>
+                <h3 className="blackTextImportant">{title2}</h3>
                 <ul>
-                <li>{li1}</li>
+                  <li>{li1}</li>
                   <li>{li2}</li>
                   <li>{li3}</li>
                   <li>{li4}</li>
@@ -197,18 +198,18 @@ const isMobile = useIsMobile();
                   <li>{li20}</li>
                   <li>{li21}</li>
                   <li>{li22}</li>
-                  <li>{li23}<a href="https://www.artistcloseup.com/magazine" target="_blank" rel="noreferrer">Artist Closeup Contemporary Magazine</a></li>
+                  <li>{li23}<a className='blue-tags' href="https://www.artistcloseup.com/magazine" target="_blank" rel="noreferrer">Artist Closeup Contemporary Magazine</a></li>
                   <li>{li24}</li>
                   <li>{li25}</li>
-                  <li>{li26}<a href="https://tpandgo.com/el-grito-del-silencio-or-artista-plastico-jaime-kafati" target="_blank" rel="noreferrer">{li27}</a></li>                  
+                  <li>{li26}<a className='blue-tags' href="https://tpandgo.com/el-grito-del-silencio-or-artista-plastico-jaime-kafati" target="_blank" rel="noreferrer">{li27}</a></li>                  
                 </ul>
 
-                <h3 style={{ color: '#fff' }}>{links}</h3>
+                <h3 className="blackTextImportant">{links}</h3>
                 <ul>
-                  <li>{links1} <a href="http://tpandgo.com/artes-plasticas/expo-arte-30-latinoamerica-artista-jaime-kafati" target="_blank" rel="noreferrer">{links2}</a>  </li>
-                  <li>ES Gallery, Colombia (Instagram: @garcesgallery) <a href="https://garcesgallery.com/" target="_blank" rel="noreferrer">Garces Gallery</a></li>
-                  <li>{links3}<a href="www.econciencia.com" target="_blank" rel="noreferrer">Econciencia</a>  & <a href="https://www.studiovisitmagazine.com/volumes" target="_blank" rel="noreferrer">Studio Visit Magazine</a> </li>
-                  <li>{links4}<a href="https://www.studiovisitmagazine.com/pastvolumes/volume51" target="_blank" rel="noreferrer">Volume 51</a></li>
+                  <li>{links1} <a className='blue-tags' href="http://tpandgo.com/artes-plasticas/expo-arte-30-latinoamerica-artista-jaime-kafati" target="_blank" rel="noreferrer">{links2}</a>  </li>
+                  <li>ES Gallery, Colombia (Instagram: @garcesgallery) <a className='blue-tags' href="https://garcesgallery.com/" target="_blank" rel="noreferrer">Garces Gallery</a></li>
+                  <li>{links3}<a className='blue-tags' href="www.econciencia.com" target="_blank" rel="noreferrer"> Econciencia</a>  & <a className='blue-tags' href="https://www.studiovisitmagazine.com/volumes" target="_blank" rel="noreferrer">Studio Visit Magazine</a> </li>
+                  <li>{links4}<a className='blue-tags' href="https://www.studiovisitmagazine.com/pastvolumes/volume51" target="_blank" rel="noreferrer">Volume 51</a></li>
                 </ul>
               </div>
             </IonText>

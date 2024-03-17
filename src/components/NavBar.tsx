@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom';
 import { logoInstagram, logoFacebook, logoYoutube } from 'ionicons/icons';
 import './navbar.scss';
 import customIcon from '/src/assets/images/sa-logo.png';
+import LanguageToggle from './LanguageToggle';
 
 const NavBar: React.FC = () => {
   const history = useHistory();
@@ -35,6 +36,7 @@ const NavBar: React.FC = () => {
               <IonButton fill="clear" onClick={() => navigate('/contact')}>Contact</IonButton>
             </div>
             <div className="social-links">
+              <LanguageToggle />
               <IonButton fill="clear" href="https://www.instagram.com/kafati_art_studio/?hl=en" target="_blank">
                 <IonIcon icon={logoInstagram} style={{ color: 'white' }} />
               </IonButton>
