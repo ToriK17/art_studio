@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import {
   IonHeader,
   IonToolbar,
@@ -10,10 +10,42 @@ import { logoInstagram, logoFacebook, logoYoutube } from 'ionicons/icons';
 import './navbar.scss';
 import customIcon from '/src/assets/images/sa-logo.png';
 import LanguageToggle from './LanguageToggle';
+import { LanguageContext } from './LanguageContext'; // Import LanguageContext
+
+interface TranslationsType {
+  en: {
+    gallery: string;
+    about: string;
+    videos: string;
+    contact: string;
+  };
+  es: {
+    gallery: string;
+    about: string;
+    videos: string;
+    contact: string;
+  };
+}
+
+const translations: TranslationsType = {
+  en: {
+    gallery: 'Gallery',
+    about: 'About',
+    videos: 'Videos',
+    contact: 'Contact',
+  },
+  es: {
+    gallery: 'Galería',
+    about: 'Acerca de',
+    videos: 'Videos',
+    contact: 'Contacto',
+  },
+};
 
 const NavBar: React.FC = () => {
   const history = useHistory();
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+  const { language } = useContext(LanguageContext); // Use context to get current language
 
   useEffect(() => {
     const handleResize = () => setIsSmallScreen(window.innerWidth < 768);
@@ -26,14 +58,14 @@ const NavBar: React.FC = () => {
   return (
     <IonHeader>
       <IonToolbar className="custom-toolbar">
-      <a href="/gallery" className="toolbar-title">Kafati Art Studio</a>
+        <a href="/gallery" className="toolbar-title">Kafati Art Studio</a>
         {!isSmallScreen && (
           <div className="navbar-content">
             <div className="navbar-links">
-              <IonButton fill="clear" onClick={() => navigate('/gallery')}>Gallery</IonButton>
-              <IonButton fill="clear" onClick={() => navigate('/about')}>About</IonButton>
-              <IonButton fill="clear" onClick={() => navigate('/videos')}>Videos</IonButton>
-              <IonButton fill="clear" onClick={() => navigate('/contact')}>Contact</IonButton>
+              <IonButton fill="clear" onClick={() => navigate('/gallery')}>{translations[language].gallery}</IonButton>
+              <IonButton fill="clear" onClick={() => navigate('/about')}>{translations[language].about}</IonButton>
+              <IonButton fill="clear" onClick={() => navigate('/videos')}>{translations[language].videos}</IonButton>
+              <IonButton fill="clear" onClick={() => navigate('/contact')}>{translations[language].contact}</IonButton>
             </div>
             <div className="social-links">
               <LanguageToggle />

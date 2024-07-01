@@ -1,8 +1,8 @@
-import React, { createContext, ReactNode, useState } from 'react';
+import React, { createContext, ReactNode, useState, Dispatch, SetStateAction } from 'react';
 
 interface LanguageContextType {
-  language: string;
-  setLanguage: (language: string) => void;
+  language: 'en' | 'es';
+  setLanguage: Dispatch<SetStateAction<'en' | 'es'>>;
   toggleLanguage: () => void;
 }
 
@@ -17,10 +17,10 @@ export const LanguageContext = createContext<LanguageContextType>({
 });
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState<'en' | 'es'>('en');
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'es' : 'en');
+    setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'es' : 'en'));
   };
 
   const contextValue = { language, setLanguage, toggleLanguage };
