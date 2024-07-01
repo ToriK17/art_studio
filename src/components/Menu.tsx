@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   IonContent,
   IonIcon,
@@ -12,67 +12,103 @@ import {
   IonNote,
 } from '@ionic/react';
 import { useLocation } from 'react-router-dom';
-import { logoInstagram, logoFacebook, logoYoutube, archiveSharp, imagesOutline, imagesSharp, personOutline, personSharp, videocamOutline, videocamSharp, chatbubbleOutline } from 'ionicons/icons';
+import {
+  logoInstagram,
+  logoFacebook,
+  logoYoutube,
+  archiveSharp,
+  imagesOutline,
+  imagesSharp,
+  personOutline,
+  personSharp,
+  videocamOutline,
+  videocamSharp,
+  chatbubbleOutline,
+} from 'ionicons/icons';
 import './Menu.css';
 import customIcon from '/src/assets/images/sa-logo.png';
 import LanguageToggle from './LanguageToggle';
+import { LanguageContext } from './LanguageContext';
 
+const translations = {
+  en: {
+    gallery: 'Gallery',
+    about: 'About',
+    videos: 'Videos',
+    contact: 'Contact',
+  },
+  es: {
+    gallery: 'Galería',
+    about: 'Acerca de',
+    videos: 'Videos',
+    contact: 'Contacto',
+  },
+};
 
 interface AppPage {
   url: string;
   iosIcon: string;
   mdIcon: string;
-  title: string;
+  title: keyof typeof translations['en'];
 }
 
 const appPages: AppPage[] = [
   {
-    title: 'Gallery',
+    title: 'gallery',
     url: '/gallery',
     iosIcon: imagesOutline,
-    mdIcon: imagesSharp
+    mdIcon: imagesSharp,
   },
   {
-    title: 'About',
+    title: 'about',
     url: '/about',
     iosIcon: personOutline,
-    mdIcon: personSharp
+    mdIcon: personSharp,
   },
   {
-    title: 'Videos',
+    title: 'videos',
     url: '/videos',
     iosIcon: videocamOutline,
-    mdIcon: videocamSharp
+    mdIcon: videocamSharp,
   },
   {
-    title: 'Contact',
-    url: '/Contact',
+    title: 'contact',
+    url: '/contact',
     iosIcon: chatbubbleOutline,
-    mdIcon: archiveSharp
-  }
+    mdIcon: archiveSharp,
+  },
 ];
 
 const Menu: React.FC = () => {
   const location = useLocation();
+  const { language } = useContext(LanguageContext);
 
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <LanguageToggle/>
-          <IonListHeader className="kafati-font-header" style={{ color: '#fff' }}>Kafati Art Studio</IonListHeader>
+          <LanguageToggle />
+          <IonListHeader className="kafati-font-header" style={{ color: '#fff' }}>
+            Kafati Art Studio
+          </IonListHeader>
           <IonNote>Pintor con el pincel extranjero</IonNote>
           {appPages.map((appPage, index) => (
             <IonMenuToggle key={index} autoHide={false}>
-              <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+              <IonItem
+                className={location.pathname === appPage.url ? 'selected' : ''}
+                routerLink={appPage.url}
+                routerDirection="none"
+                lines="none"
+                detail={false}
+              >
                 <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} style={{ color: '#fff' }} />
-                <IonLabel>{appPage.title}</IonLabel>
+                <IonLabel>{translations[language][appPage.title]}</IonLabel>
               </IonItem>
             </IonMenuToggle>
           ))}
         </IonList>
         <IonList id="social-list">
-        <IonItem lines="none" href="https://www.instagram.com/kafati_art_studio/?hl=en" target="_blank" detail={false} >
+          <IonItem lines="none" href="https://www.instagram.com/kafati_art_studio/?hl=en" target="_blank" detail={false}>
             <IonIcon slot="start" icon={logoInstagram} style={{ color: 'white' }} />
             Instagram
           </IonItem>

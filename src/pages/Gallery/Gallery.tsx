@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useIsMobile } from '../../hooks/useIsMobile';
-
 import {
   IonPage,
   IonCard,
@@ -18,7 +17,7 @@ import {
   IonGrid,
   IonRow,
 } from '@ionic/react';
-import { filter } from 'ionicons/icons';
+import { LanguageContext } from "../../components/LanguageContext";
 
 interface Painting {
   title: string;
@@ -30,9 +29,19 @@ interface Painting {
   };
 }
 
+const translations = {
+  en: {
+    gallery: 'Gallery',
+  },
+  es: {
+    gallery: 'Galería',
+  },
+};
+
 const Gallery: React.FC = () => {
   const [data, setData] = useState<Painting[]>([]);
   const isMobile = useIsMobile();
+  const { language } = useContext(LanguageContext);
 
   const fetchContentfulData = async () => {
     const query = `
@@ -61,21 +70,21 @@ const Gallery: React.FC = () => {
         body: JSON.stringify({ query }),
       });
 
-    const result = await response.json();
-    const items = result.data.paintingPostCollection.items;
+      const result = await response.json();
+      const items = result.data.paintingPostCollection.items;
 
-    // Filter out duplicates
-    const uniqueUrls = new Set();
-    const filteredItems = items.filter((item: { imageFile: { url: any; }; }) => {
-      const url = item.imageFile?.url;
-      if (url && !uniqueUrls.has(url)) {
-        uniqueUrls.add(url);
-        return true;
-      }
-      return false;
-    });
-    console.log(filteredItems.length)
-    setData(filteredItems);
+      // Filter out duplicates
+      const uniqueUrls = new Set();
+      const filteredItems = items.filter((item: { imageFile: { url: any; }; }) => {
+        const url = item.imageFile?.url;
+        if (url && !uniqueUrls.has(url)) {
+          uniqueUrls.add(url);
+          return true;
+        }
+        return false;
+      });
+      console.log(filteredItems.length);
+      setData(filteredItems);
     } catch (error) {
       console.error(error);
     }
@@ -92,7 +101,7 @@ const Gallery: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Gallery</IonTitle>
+          <IonTitle>{translations[language].gallery}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>

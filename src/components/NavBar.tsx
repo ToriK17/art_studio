@@ -10,7 +10,7 @@ import { logoInstagram, logoFacebook, logoYoutube } from 'ionicons/icons';
 import './navbar.scss';
 import customIcon from '/src/assets/images/sa-logo.png';
 import LanguageToggle from './LanguageToggle';
-import { LanguageContext } from './LanguageContext'; // Import LanguageContext
+import { LanguageContext } from './LanguageContext';
 
 interface TranslationsType {
   en: {
@@ -45,7 +45,7 @@ const translations: TranslationsType = {
 const NavBar: React.FC = () => {
   const history = useHistory();
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
-  const { language } = useContext(LanguageContext); // Use context to get current language
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
     const handleResize = () => setIsSmallScreen(window.innerWidth < 768);
