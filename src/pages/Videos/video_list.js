@@ -78,10 +78,6 @@ export default[
 		title: 'Study in Graphics'
 	},
 	{
-		src: 'https://www.youtube.com/embed/V9kVnPK5bQ0',
-		title: 'Oil Ground, is it worth the price'
-	},
-	{
 		src: 'https://www.youtube.com/embed/FvSPkDrr4W4',
 		title: 'How I Painted Mother Mary (70+ hours in 6 Minutes)'
 	},
@@ -94,7 +90,7 @@ export default[
 		title: 'Painting a Tropical Scene'
 	},
 	{
-		src: 'https://www.youtube.com/embed/bBwAuG3xCUM?si=088T_WCzTEjgesvG',
-		title: 'Magazine artista plástico contemporáneo'
+		src: 'https://www.youtube.com/embed/kLf0b-lj2p0',
+		title: 'Exhausted From Bread and Circus'
 	}
 ]
