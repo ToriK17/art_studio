@@ -49,6 +49,7 @@ interface Translations {
     li25: string;
     li26: string;
     li27: string;
+    li28: string;
     links: string;
     links1: string;
     links2: string;
@@ -92,6 +93,7 @@ const li24 = (translations as Translations)[language].li24;
 const li25 = (translations as Translations)[language].li25;
 const li26 = (translations as Translations)[language].li26;
 const li27 = (translations as Translations)[language].li27;
+const li28 = (translations as Translations)[language].li28;
 const links = (translations as Translations)[language].links;
 const links1 = (translations as Translations)[language].links1;
 const links2 = (translations as Translations)[language].links2;
@@ -123,7 +125,7 @@ const isMobile = useIsMobile();
 
                 <h3 style={{ color: '#fff' }}>{title2}</h3>
                 <ul>
-                <li>{li1}</li>
+                  <li>{li1}</li>
                   <li>{li2}</li>
                   <li>{li3}</li>
                   <li>{li4}</li>
@@ -148,8 +150,9 @@ const isMobile = useIsMobile();
                   <li>{li23}<a href="https://www.artistcloseup.com/magazine" target="_blank" rel="noreferrer">Artist Closeup Contemporary Magazine</a></li>
                   <li>{li24}</li>
                   <li>{li25}</li>
-                  <li>{li26}<a href="https://tpandgo.com/el-grito-del-silencio-or-artista-plastico-jaime-kafati" target="_blank" rel="noreferrer">{li27}</a></li>                  
-                </ul>
+                  <li>{li26}<a href="https://tpandgo.com/el-grito-del-silencio-or-artista-plastico-jaime-kafati" target="_blank" rel="noreferrer">{li27}</a></li>
+                  <li>{li28}<a href="https://www.contemporaryartcuratormagazine.com/home-2/jaime-kafati-spotlight" target="_blank" rel="noreferrer">Art Legends of Our Time by Contemporary Art Curator Magazine</a></li>
+                  </ul>
 
                 <h3 style={{ color: '#fff' }}>{links}</h3>
                 <ul>
@@ -201,8 +204,9 @@ const isMobile = useIsMobile();
                   <li>{li23}<a className='blue-tags' href="https://www.artistcloseup.com/magazine" target="_blank" rel="noreferrer">Artist Closeup Contemporary Magazine</a></li>
                   <li>{li24}</li>
                   <li>{li25}</li>
-                  <li>{li26}<a className='blue-tags' href="https://tpandgo.com/el-grito-del-silencio-or-artista-plastico-jaime-kafati" target="_blank" rel="noreferrer">{li27}</a></li>                  
-                </ul>
+                  <li>{li26}<a className='blue-tags' href="https://tpandgo.com/el-grito-del-silencio-or-artista-plastico-jaime-kafati" target="_blank" rel="noreferrer">{li27}</a></li>
+                  <li>{li28}<a className='blue-tags' href="https://www.contemporaryartcuratormagazine.com/home-2/jaime-kafati-spotlight" target="_blank" rel="noreferrer">Art Legends of Our Time by Contemporary Art Curator Magazine</a></li>
+                  </ul>
 
                 <h3 className="blackTextImportant">{links}</h3>
                 <ul>
