@@ -1,0 +1,53 @@
+.painting-show-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.painting-show-mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+.painting-show-desktop {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.painting-show-image-wrapper {
+  flex: 2;
+
+  ion-img::part(image) {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.painting-show-info {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.painting-show-title {
+  color: #fff;
+  margin-top: 0.75rem;
+}
+
+.painting-show-description {
+  color: #ccc;
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+.painting-show-meta {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
