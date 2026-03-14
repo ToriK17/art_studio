@@ -29,6 +29,8 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import NavBar from './components/NavBar';
 import { LanguageProvider } from './components/LanguageContext';
+import { PaintingsProvider } from './components/PaintingsContext';
+import PaintingShow from './pages/PaintingShow/PaintingShow';
 
 setupIonicReact();
 
@@ -37,6 +39,7 @@ const App: React.FC = () => {
 
   return (
     <LanguageProvider>
+    <PaintingsProvider>
     <IonApp>
       <IonReactRouter>
         {isMobile ? (
@@ -49,6 +52,7 @@ const App: React.FC = () => {
               <Route exact path="/videos" component={Videos} />
               <Route exact path="/contact" component={Contact} />
               <Route path="/folder/:name" exact={true} component={Page} />
+              <Route exact path="/painting/:id" component={PaintingShow} />
             </IonRouterOutlet>
           </IonSplitPane>
         ) : (
@@ -61,11 +65,13 @@ const App: React.FC = () => {
               <Route exact path="/videos" component={Videos} />
               <Route exact path="/contact" component={Contact} />
               <Route path="/folder/:name" exact={true} component={Page} />
+              <Route exact path="/painting/:id" component={PaintingShow} />
             </IonRouterOutlet>
           </>
         )}
       </IonReactRouter>
     </IonApp>
+    </PaintingsProvider>
     </LanguageProvider>
   );
 };

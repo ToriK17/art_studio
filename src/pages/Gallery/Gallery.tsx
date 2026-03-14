@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useIsMobile } from '../../hooks/useIsMobile';
 import {
   IonPage,
@@ -16,18 +16,11 @@ import {
   IonCol,
   IonGrid,
   IonRow,
+  IonSpinner,
 } from '@ionic/react';
-import { LanguageContext } from "../../components/LanguageContext";
-
-interface Painting {
-  title: string;
-  dimensions?: string;
-  mediaType?: string;
-  imageFile: {
-    description?: string;
-    url: string;
-  };
-}
+import { useHistory } from 'react-router-dom';
+import { LanguageContext } from '../../components/LanguageContext';
+import { PaintingsContext } from '../../components/PaintingsContext';
 
 const translations = {
   en: {
@@ -39,60 +32,10 @@ const translations = {
 };
 
 const Gallery: React.FC = () => {
-  const [data, setData] = useState<Painting[]>([]);
+  const { paintings, loading } = useContext(PaintingsContext);
   const isMobile = useIsMobile();
   const { language } = useContext(LanguageContext);
-
-  const fetchContentfulData = async () => {
-    const query = `
-      {
-        paintingPostCollection {
-          items {
-            title
-            dimensions
-            mediaType
-            imageFile {
-              description
-              url
-            }
-          }
-        }
-      }
-    `;
-
-    try {
-      const response = await fetch(`https://graphql.contentful.com/content/v1/spaces/${import.meta.env.VITE_REACT_APP_SPACE_ID}/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_REACT_APP_ACCESS_TOKEN}`,
-        },
-        body: JSON.stringify({ query }),
-      });
-
-      const result = await response.json();
-      const items = result.data.paintingPostCollection.items;
-
-      // Filter out duplicates
-      const uniqueUrls = new Set();
-      const filteredItems = items.filter((item: { imageFile: { url: any; }; }) => {
-        const url = item.imageFile?.url;
-        if (url && !uniqueUrls.has(url)) {
-          uniqueUrls.add(url);
-          return true;
-        }
-        return false;
-      });
-      console.log(filteredItems.length);
-      setData(filteredItems);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchContentfulData();
-  }, []);
+  const history = useHistory();
 
   return (
     <IonPage>
@@ -105,23 +48,29 @@ const Gallery: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonGrid>
-          <IonRow>
-            {data.map((painting, index) => (
-              <IonCol size={isMobile ? "12" : "4"} key={index}>
-                <IonCard>
-                  <IonImg src={painting.imageFile?.url} alt={painting.imageFile?.description} />
-                  <IonCardHeader>
-                    <IonCardTitle style={{ color: 'white' }}>{painting.title}</IonCardTitle>
-                  </IonCardHeader>
-                  <IonCardContent style={{ color: 'white' }}>
-                    {`${painting.mediaType} ${painting.dimensions}`}
-                  </IonCardContent>
-                </IonCard>
-              </IonCol>
-            ))}
-          </IonRow>
-        </IonGrid>
+        {loading ? (
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+            <IonSpinner />
+          </div>
+        ) : (
+          <IonGrid>
+            <IonRow>
+              {paintings.map((painting, index) => (
+                <IonCol size={isMobile ? '12' : '4'} key={index}>
+                  <IonCard button onClick={() => history.push(`/painting/${painting.sys.id}`)}>
+                    <IonImg src={painting.imageFile?.url} alt={painting.imageFile?.description} />
+                    <IonCardHeader>
+                      <IonCardTitle style={{ color: 'white' }}>{painting.title}</IonCardTitle>
+                    </IonCardHeader>
+                    <IonCardContent style={{ color: 'white' }}>
+                      {`${painting.mediaType} ${painting.dimensions}`}
+                    </IonCardContent>
+                  </IonCard>
+                </IonCol>
+              ))}
+            </IonRow>
+          </IonGrid>
+        )}
       </IonContent>
     </IonPage>
   );
