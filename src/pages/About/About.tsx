@@ -120,7 +120,7 @@ const isMobile = useIsMobile();
           <>
             <IonImg src={profilePic} alt="Jaime Kafati" />
             <IonText>
-              <p style={{ color: '#000', marginTop: '1rem' }}>{p4}</p>
+              <p style={{ color: '#fff', marginTop: '1rem' }}>{p4}</p>
             </IonText>
             <IonText>
               <div className="about-description">
