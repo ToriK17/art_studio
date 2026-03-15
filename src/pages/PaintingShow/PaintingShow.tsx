@@ -78,6 +78,14 @@ const PaintingShow: React.FC = () => {
                   {painting.dimensions && (
                     <p className="painting-show-meta">{painting.dimensions}</p>
                   )}
+                  {painting.title.toLowerCase().includes('available') && (
+                    <a
+                      className="painting-show-inquire"
+                      href={`mailto:jeskb57@gmail.com?subject=Inquiry: ${encodeURIComponent(painting.title)}`}
+                    >
+                      Inquire about this piece
+                    </a>
+                  )}
                 </IonText>
               </div>
             </div>
