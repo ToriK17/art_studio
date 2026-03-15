@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
             </IonText>
           </>
         ) : (
-          <div className="container">
+          <div className="container contact-container">
             <div className="left-half">
               <IonImg src={contactPic} className="profile-img" alt="Jaime Kafati" />
             </div>

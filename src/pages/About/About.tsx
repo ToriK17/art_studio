@@ -21,6 +21,7 @@ interface Translations {
     p1: string;
     p2: string;
     p3: string;
+    p4: string;
     title2: string;
     li1: string;
     li2: string;
@@ -66,6 +67,7 @@ const title2 = (translations as Translations)[language].title2;
 const p1 = (translations as Translations)[language].p1;
 const p2 = (translations as Translations)[language].p2;
 const p3 = (translations as Translations)[language].p3;
+const p4 = (translations as Translations)[language].p4;
 const li1 = (translations as Translations)[language].li1;
 const li2 = (translations as Translations)[language].li2;
 const li3 = (translations as Translations)[language].li3;
@@ -118,6 +120,9 @@ const isMobile = useIsMobile();
           <>
             <IonImg src={profilePic} alt="Jaime Kafati" />
             <IonText>
+              <p style={{ color: '#000', marginTop: '1rem' }}>{p4}</p>
+            </IonText>
+            <IonText>
               <div className="about-description">
                   <p>{p1}</p>
                   <p>{p2}</p>
@@ -168,10 +173,13 @@ const isMobile = useIsMobile();
           <div className="container">
             <div className="left-half">
               <IonImg src={profilePic} className="profile-img" alt="Jaime Kafati" />
+              <IonText>
+                <p style={{ color: '#000', marginTop: '1rem' }}>{p4}</p>
+              </IonText>
             </div>
             <div className="right-half">
             <IonText>
-              <h2>{title}</h2>
+              <h2 style={{ fontWeight: 'bold' }}>{title}</h2>
               <div className="about-description">
                   <p>{p1}</p>
                   <p>{p2}</p>
