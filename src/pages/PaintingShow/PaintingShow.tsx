@@ -14,6 +14,8 @@ import {
 import { useParams } from 'react-router-dom';
 import { PaintingsContext } from '../../components/PaintingsContext';
 import { useIsMobile } from '../../hooks/useIsMobile';
+import AvailablePill from '../../components/AvailablePill';
+import { isAvailable, cleanTitle } from '../../utils/paintingUtils';
 import './PaintingShow.scss';
 
 const PaintingShow: React.FC = () => {
@@ -40,7 +42,7 @@ const PaintingShow: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/gallery" />
           </IonButtons>
-          <IonTitle>{loading ? '' : painting?.title ?? ''}</IonTitle>
+          <IonTitle>{loading ? '' : painting ? cleanTitle(painting.title) : ''}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -68,7 +70,8 @@ const PaintingShow: React.FC = () => {
               </div>
               <div className="painting-show-info">
                 <IonText>
-                  <h2 className="painting-show-title">{painting.title}</h2>
+                  <h2 className="painting-show-title">{cleanTitle(painting.title)}</h2>
+                  {isAvailable(painting.title) && <AvailablePill />}
                   {painting.imageFile?.description && (
                     <p className="painting-show-description">{painting.imageFile.description}</p>
                   )}
@@ -78,10 +81,10 @@ const PaintingShow: React.FC = () => {
                   {painting.dimensions && (
                     <p className="painting-show-meta">{painting.dimensions}</p>
                   )}
-                  {painting.title.toLowerCase().includes('available') && (
+                  {isAvailable(painting.title) && (
                     <a
                       className="painting-show-inquire"
-                      href={`mailto:jeskb57@gmail.com?subject=Inquiry: ${encodeURIComponent(painting.title)}`}
+                      href={`mailto:jeskb57@gmail.com?subject=Inquiry: ${encodeURIComponent(cleanTitle(painting.title))}`}
                     >
                       Inquire about this piece
                     </a>

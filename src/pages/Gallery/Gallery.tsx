@@ -21,6 +21,8 @@ import {
 import { useHistory } from 'react-router-dom';
 import { LanguageContext } from '../../components/LanguageContext';
 import { PaintingsContext } from '../../components/PaintingsContext';
+import AvailablePill from '../../components/AvailablePill';
+import { isAvailable, cleanTitle } from '../../utils/paintingUtils';
 
 const translations = {
   en: {
@@ -60,7 +62,8 @@ const Gallery: React.FC = () => {
                   <IonCard button onClick={() => history.push(`/painting/${painting.sys.id}`)}>
                     <IonImg src={painting.imageFile?.url} alt={painting.imageFile?.description} />
                     <IonCardHeader>
-                      <IonCardTitle style={{ color: 'white' }}>{painting.title}</IonCardTitle>
+                      <IonCardTitle style={{ color: 'white' }}>{cleanTitle(painting.title)}</IonCardTitle>
+                      {isAvailable(painting.title) && <AvailablePill />}
                     </IonCardHeader>
                     <IonCardContent style={{ color: 'white' }}>
                       {`${painting.mediaType} ${painting.dimensions}`}
