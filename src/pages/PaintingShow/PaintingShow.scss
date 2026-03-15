@@ -9,14 +9,19 @@
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
+
+  .painting-show-image-wrapper {
+    max-height: 55vh;
+  }
 }
 
 .painting-show-desktop {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   max-width: 1200px;
+  height: calc(100vh - 180px);
   margin: 0 auto;
   padding: 1rem;
   padding-top: 2rem;
@@ -25,10 +30,22 @@
 .painting-show-image-wrapper {
   flex: 2;
   cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: calc(100vh - 180px);
+  overflow: hidden;
+
+  ion-img {
+    max-height: calc(100vh - 180px);
+    width: 100%;
+  }
 
   ion-img::part(image) {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
+    max-height: calc(100vh - 180px);
     object-fit: contain;
   }
 }
